@@ -80,6 +80,8 @@ function renderDashboard() {
     </div>
   `);
 
+  renderAISection();
+
   // Animate counters after render
   setTimeout(() => {
     UI.animateCount(document.getElementById('statLessons'), stats.lessonsCompleted);
@@ -245,4 +247,160 @@ function renderDashRecommendations() {
       </div>
     `).join('')}
   </div>`;
+}
+
+// Qadam Academy - AI recommendation integration
+
+function renderAISection() {
+
+  const layout = document.querySelector('.dashboard-layout');
+  if (!layout) return;
+
+  const section = document.createElement('div');
+  section.className = 'dash-section';
+
+  section.innerHTML = `
+    <h2 class="section-heading">🤖 AI ұсыныстары</h2>
+
+    <div class="rec-card">
+      <span class="rec-icon">🤖</span>
+
+      <div class="rec-body">
+        <strong>Жасанды интеллект көмекшісі</strong>
+
+        <p>AI тест нәтижелерін талдап, қайталау қажет тақырыпты ұсынады.</p>
+
+        <p>Ұсыныс қате болуы мүмкін. Жеке деректер AI моделіне жіберілмейді.</p>
+
+        <button id="aiAnalyzeBtn" class="btn btn-primary">
+          AI талдау
+        </button>
+
+        <div id="aiRecommendationResult"
+             style="margin-top:16px">
+        </div>
+      </div>
+    </div>
+  `;
+
+  layout.querySelector('.profile-card').after(section);
+
+  document.getElementById('aiAnalyzeBtn')
+    .addEventListener('click', loadAIRecommendation);
+};
+
+async function loadAIRecommendation() {
+  const button = document.getElementById('aiAnalyzeBtn');
+  const output = document.getElementById('aiRecommendationResult');
+
+  const results = Storage.getTestResults().filter(r =>
+    Number.isInteger(r.score) &&
+    Number.isInteger(r.total) &&
+    r.total > 0 &&
+    r.score >= 0 &&
+    r.score <= r.total
+  );
+
+  if (!results.length) {
+    output.textContent = 'Алдымен тест тапсырыңыз.';
+    return;
+  }
+
+  const topics = results.map((r, i) => ({
+    topic_id: 'topic_' + i,
+    correct: r.score,
+    total: r.total
+  }));
+
+  if (topics.every(t => t.correct === t.total)) {
+    output.textContent = 'Тамаша! Барлық жауаптарыңыз дұрыс.';
+    return;
+  }
+
+  const baseline = [...topics].sort((a, b) =>
+    (a.correct / a.total) - (b.correct / b.total) ||
+    a.topic_id.localeCompare(b.topic_id)
+  )[0];
+
+  button.disabled = true;
+  button.textContent = 'Талдау жүргізілуде...';
+  output.textContent = 'Нәтижелер өңделуде...';
+
+  let selected = baseline.topic_id;
+  let source = 'baseline';
+
+  try {
+    const response = await fetch('/api/recommend', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ topics })
+    });
+
+    if (!response.ok) {
+      throw new Error('API unavailable');
+    }
+
+    const data = await response.json();
+
+    if (topics.some(t => t.topic_id === data.topic_id)) {
+      selected = data.topic_id;
+      source = data.source === 'ai' ? 'ai' : 'baseline';
+    }
+
+  } catch (error) {
+    console.warn('Using baseline:', error);
+  }
+
+  const index = topics.findIndex(t => t.topic_id === selected);
+  const result = results[index];
+
+  const percent = Math.round(
+    result.score / result.total * 100
+  );
+
+  output.replaceChildren();
+
+  const title = document.createElement('strong');
+  title.textContent = source === 'ai'
+    ? '🤖 AI ұсынысы'
+    : '📊 Алгоритмдік ұсыныс';
+
+  const topic = document.createElement('p');
+  topic.textContent = 'Тақырып: ' + result.testTitle;
+
+  const score = document.createElement('p');
+  score.textContent = 'Нәтиже: ' + percent + '%';
+
+  const advice = document.createElement('p');
+  advice.textContent = 'Осы тақырыпты қайталап, тестті қайта тапсырыңыз.';
+
+  const link = document.createElement('a');
+  link.className = 'btn btn-sm btn-primary';
+  link.href = '#test/' + result.subjectId + '/' + result.testId;
+  link.textContent = 'Тестті қайталау';
+
+  const dismiss = document.createElement('button');
+  dismiss.className = 'btn btn-sm btn-outline';
+  dismiss.textContent = 'Ұсынысты қабылдамау';
+  dismiss.style.marginLeft = '8px';
+
+  dismiss.onclick = () => {
+    output.textContent = 'Ұсыныс қабылданбады.';
+  };
+
+  output.append(title, topic, score, advice);
+
+  if (source === 'ai' && selected !== baseline.topic_id) {
+    const warning = document.createElement('p');
+    warning.textContent =
+      '⚠️ AI нәтижесі стандартты алгоритмнен ерекшеленеді. Ұсынысты тексеріңіз.';
+    output.append(warning);
+  }
+
+  output.append(link, dismiss);
+
+  button.disabled = false;
+  button.textContent = 'Қайта талдау';
 }
