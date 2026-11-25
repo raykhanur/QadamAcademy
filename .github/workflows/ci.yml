@@ -1,0 +1,43 @@
+name: Qadam Academy CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Check project structure
+        run: |
+          test -f index.html
+          test -f css/style.css
+          test -f data/subjects.js
+          test -f js/router.js
+          test -f js/storage.js
+          echo "Project structure OK"
+
+      - name: Validate JavaScript
+        run: |
+          find js data -name "*.js" -exec node --check {} \;
+
+      - name: Validate HTML
+        run: npx --yes html-validate@9 index.html
+
+      - name: Validation completed
+        run: echo "All checks passed successfully"
