@@ -8,10 +8,7 @@ function renderHome() {
   const totalLessons  = Object.values(LESSONS).reduce((s,arr) => s + arr.length, 0);
   const totalTests    = Object.values(TESTS).reduce((s,arr) => s + arr.length, 0);
 
-  // Build subject icons for the hero visual
-  const heroCards = SUBJECTS.slice(0, 6).map((s, i) => `
-    <div class="floating-card card-${i+1}">${s.icon} ${s.name}</div>
-  `).join('');
+
 
   UI.setContent(`
     <section class="hero">
@@ -42,7 +39,7 @@ function renderHome() {
         </div>
       </div>
       <div class="hero-visual">
-        <div class="hero-card-stack">${heroCards}</div>
+        <img src="academy.png" alt="Qadam Academy" class="hero-image" />
       </div>
     </section>
 
