@@ -1,0 +1,14 @@
+{
+  "model": "qwen2.5:3b",
+  "total_cases": 30,
+  "ai_correct": 27,
+  "ai_accuracy": 0.9,
+  "baseline_accuracy": 1,
+  "ai_macro_f1": 0.8958548331613346,
+  "baseline_macro_f1": 1.0,
+  "average_latency_seconds": 0.4702,
+  "median_latency_seconds": 0.344,
+  "errors": 0,
+  "input_tokens": 3840,
+  "output_tokens": 270
+}

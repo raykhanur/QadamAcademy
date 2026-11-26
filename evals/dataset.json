@@ -1,0 +1,632 @@
+[
+  {
+    "id": "EVAL-01",
+    "topics": [
+      {
+        "topic_id": "topic_a",
+        "correct": 2,
+        "total": 5
+      },
+      {
+        "topic_id": "topic_b",
+        "correct": 4,
+        "total": 5
+      },
+      {
+        "topic_id": "topic_c",
+        "correct": 1,
+        "total": 5
+      }
+    ],
+    "expected": "topic_c"
+  },
+  {
+    "id": "EVAL-02",
+    "topics": [
+      {
+        "topic_id": "topic_a",
+        "correct": 1,
+        "total": 5
+      },
+      {
+        "topic_id": "topic_b",
+        "correct": 3,
+        "total": 5
+      },
+      {
+        "topic_id": "topic_c",
+        "correct": 5,
+        "total": 5
+      }
+    ],
+    "expected": "topic_a"
+  },
+  {
+    "id": "EVAL-03",
+    "topics": [
+      {
+        "topic_id": "topic_a",
+        "correct": 4,
+        "total": 5
+      },
+      {
+        "topic_id": "topic_b",
+        "correct": 1,
+        "total": 5
+      },
+      {
+        "topic_id": "topic_c",
+        "correct": 3,
+        "total": 5
+      }
+    ],
+    "expected": "topic_b"
+  },
+  {
+    "id": "EVAL-04",
+    "topics": [
+      {
+        "topic_id": "topic_a",
+        "correct": 5,
+        "total": 5
+      },
+      {
+        "topic_id": "topic_b",
+        "correct": 4,
+        "total": 5
+      },
+      {
+        "topic_id": "topic_c",
+        "correct": 2,
+        "total": 5
+      }
+    ],
+    "expected": "topic_c"
+  },
+  {
+    "id": "EVAL-05",
+    "topics": [
+      {
+        "topic_id": "topic_a",
+        "correct": 3,
+        "total": 5
+      },
+      {
+        "topic_id": "topic_b",
+        "correct": 5,
+        "total": 5
+      },
+      {
+        "topic_id": "topic_c",
+        "correct": 4,
+        "total": 5
+      }
+    ],
+    "expected": "topic_a"
+  },
+  {
+    "id": "EVAL-06",
+    "topics": [
+      {
+        "topic_id": "topic_a",
+        "correct": 4,
+        "total": 5
+      },
+      {
+        "topic_id": "topic_b",
+        "correct": 2,
+        "total": 5
+      },
+      {
+        "topic_id": "topic_c",
+        "correct": 5,
+        "total": 5
+      }
+    ],
+    "expected": "topic_b"
+  },
+  {
+    "id": "EVAL-07",
+    "topics": [
+      {
+        "topic_id": "topic_a",
+        "correct": 0,
+        "total": 5
+      },
+      {
+        "topic_id": "topic_b",
+        "correct": 3,
+        "total": 5
+      },
+      {
+        "topic_id": "topic_c",
+        "correct": 4,
+        "total": 5
+      }
+    ],
+    "expected": "topic_a"
+  },
+  {
+    "id": "EVAL-08",
+    "topics": [
+      {
+        "topic_id": "topic_a",
+        "correct": 4,
+        "total": 5
+      },
+      {
+        "topic_id": "topic_b",
+        "correct": 0,
+        "total": 5
+      },
+      {
+        "topic_id": "topic_c",
+        "correct": 2,
+        "total": 5
+      }
+    ],
+    "expected": "topic_b"
+  },
+  {
+    "id": "EVAL-09",
+    "topics": [
+      {
+        "topic_id": "topic_a",
+        "correct": 3,
+        "total": 5
+      },
+      {
+        "topic_id": "topic_b",
+        "correct": 4,
+        "total": 5
+      },
+      {
+        "topic_id": "topic_c",
+        "correct": 0,
+        "total": 5
+      }
+    ],
+    "expected": "topic_c"
+  },
+  {
+    "id": "EVAL-10",
+    "topics": [
+      {
+        "topic_id": "topic_a",
+        "correct": 1,
+        "total": 5
+      },
+      {
+        "topic_id": "topic_b",
+        "correct": 2,
+        "total": 5
+      },
+      {
+        "topic_id": "topic_c",
+        "correct": 3,
+        "total": 5
+      }
+    ],
+    "expected": "topic_a"
+  },
+  {
+    "id": "EVAL-11",
+    "topics": [
+      {
+        "topic_id": "topic_a",
+        "correct": 3,
+        "total": 5
+      },
+      {
+        "topic_id": "topic_b",
+        "correct": 1,
+        "total": 5
+      },
+      {
+        "topic_id": "topic_c",
+        "correct": 2,
+        "total": 5
+      }
+    ],
+    "expected": "topic_b"
+  },
+  {
+    "id": "EVAL-12",
+    "topics": [
+      {
+        "topic_id": "topic_a",
+        "correct": 2,
+        "total": 5
+      },
+      {
+        "topic_id": "topic_b",
+        "correct": 3,
+        "total": 5
+      },
+      {
+        "topic_id": "topic_c",
+        "correct": 1,
+        "total": 5
+      }
+    ],
+    "expected": "topic_c"
+  },
+  {
+    "id": "EVAL-13",
+    "topics": [
+      {
+        "topic_id": "topic_a",
+        "correct": 2,
+        "total": 5
+      },
+      {
+        "topic_id": "topic_b",
+        "correct": 2,
+        "total": 5
+      },
+      {
+        "topic_id": "topic_c",
+        "correct": 4,
+        "total": 5
+      }
+    ],
+    "expected": "topic_a"
+  },
+  {
+    "id": "EVAL-14",
+    "topics": [
+      {
+        "topic_id": "topic_a",
+        "correct": 4,
+        "total": 5
+      },
+      {
+        "topic_id": "topic_b",
+        "correct": 2,
+        "total": 5
+      },
+      {
+        "topic_id": "topic_c",
+        "correct": 2,
+        "total": 5
+      }
+    ],
+    "expected": "topic_b"
+  },
+  {
+    "id": "EVAL-15",
+    "topics": [
+      {
+        "topic_id": "topic_a",
+        "correct": 2,
+        "total": 5
+      },
+      {
+        "topic_id": "topic_b",
+        "correct": 4,
+        "total": 5
+      },
+      {
+        "topic_id": "topic_c",
+        "correct": 2,
+        "total": 5
+      }
+    ],
+    "expected": "topic_a"
+  },
+  {
+    "id": "EVAL-16",
+    "topics": [
+      {
+        "topic_id": "topic_a",
+        "correct": 1,
+        "total": 5
+      },
+      {
+        "topic_id": "topic_b",
+        "correct": 1,
+        "total": 5
+      },
+      {
+        "topic_id": "topic_c",
+        "correct": 1,
+        "total": 5
+      }
+    ],
+    "expected": "topic_a"
+  },
+  {
+    "id": "EVAL-17",
+    "topics": [
+      {
+        "topic_id": "topic_a",
+        "correct": 0,
+        "total": 5
+      },
+      {
+        "topic_id": "topic_b",
+        "correct": 0,
+        "total": 5
+      },
+      {
+        "topic_id": "topic_c",
+        "correct": 3,
+        "total": 5
+      }
+    ],
+    "expected": "topic_a"
+  },
+  {
+    "id": "EVAL-18",
+    "topics": [
+      {
+        "topic_id": "topic_a",
+        "correct": 5,
+        "total": 5
+      },
+      {
+        "topic_id": "topic_b",
+        "correct": 5,
+        "total": 5
+      },
+      {
+        "topic_id": "topic_c",
+        "correct": 4,
+        "total": 5
+      }
+    ],
+    "expected": "topic_c"
+  },
+  {
+    "id": "EVAL-19",
+    "topics": [
+      {
+        "topic_id": "topic_a",
+        "correct": 4,
+        "total": 5
+      },
+      {
+        "topic_id": "topic_b",
+        "correct": 5,
+        "total": 5
+      },
+      {
+        "topic_id": "topic_c",
+        "correct": 5,
+        "total": 5
+      }
+    ],
+    "expected": "topic_a"
+  },
+  {
+    "id": "EVAL-20",
+    "topics": [
+      {
+        "topic_id": "topic_a",
+        "correct": 5,
+        "total": 5
+      },
+      {
+        "topic_id": "topic_b",
+        "correct": 4,
+        "total": 5
+      },
+      {
+        "topic_id": "topic_c",
+        "correct": 5,
+        "total": 5
+      }
+    ],
+    "expected": "topic_b"
+  },
+  {
+    "id": "EVAL-21",
+    "topics": [
+      {
+        "topic_id": "topic_a",
+        "correct": 3,
+        "total": 5
+      },
+      {
+        "topic_id": "topic_b",
+        "correct": 3,
+        "total": 5
+      },
+      {
+        "topic_id": "topic_c",
+        "correct": 2,
+        "total": 5
+      }
+    ],
+    "expected": "topic_c"
+  },
+  {
+    "id": "EVAL-22",
+    "topics": [
+      {
+        "topic_id": "topic_a",
+        "correct": 2,
+        "total": 5
+      },
+      {
+        "topic_id": "topic_b",
+        "correct": 3,
+        "total": 5
+      },
+      {
+        "topic_id": "topic_c",
+        "correct": 3,
+        "total": 5
+      }
+    ],
+    "expected": "topic_a"
+  },
+  {
+    "id": "EVAL-23",
+    "topics": [
+      {
+        "topic_id": "topic_a",
+        "correct": 3,
+        "total": 5
+      },
+      {
+        "topic_id": "topic_b",
+        "correct": 2,
+        "total": 5
+      },
+      {
+        "topic_id": "topic_c",
+        "correct": 3,
+        "total": 5
+      }
+    ],
+    "expected": "topic_b"
+  },
+  {
+    "id": "EVAL-24",
+    "topics": [
+      {
+        "topic_id": "topic_a",
+        "correct": 0,
+        "total": 5
+      },
+      {
+        "topic_id": "topic_b",
+        "correct": 5,
+        "total": 5
+      },
+      {
+        "topic_id": "topic_c",
+        "correct": 5,
+        "total": 5
+      }
+    ],
+    "expected": "topic_a"
+  },
+  {
+    "id": "EVAL-25",
+    "topics": [
+      {
+        "topic_id": "topic_a",
+        "correct": 5,
+        "total": 5
+      },
+      {
+        "topic_id": "topic_b",
+        "correct": 0,
+        "total": 5
+      },
+      {
+        "topic_id": "topic_c",
+        "correct": 5,
+        "total": 5
+      }
+    ],
+    "expected": "topic_b"
+  },
+  {
+    "id": "EVAL-26",
+    "topics": [
+      {
+        "topic_id": "topic_a",
+        "correct": 5,
+        "total": 5
+      },
+      {
+        "topic_id": "topic_b",
+        "correct": 5,
+        "total": 5
+      },
+      {
+        "topic_id": "topic_c",
+        "correct": 0,
+        "total": 5
+      }
+    ],
+    "expected": "topic_c"
+  },
+  {
+    "id": "EVAL-27",
+    "topics": [
+      {
+        "topic_id": "topic_a",
+        "correct": 1,
+        "total": 5
+      },
+      {
+        "topic_id": "topic_b",
+        "correct": 5,
+        "total": 5
+      },
+      {
+        "topic_id": "topic_c",
+        "correct": 2,
+        "total": 5
+      }
+    ],
+    "expected": "topic_a"
+  },
+  {
+    "id": "EVAL-28",
+    "topics": [
+      {
+        "topic_id": "topic_a",
+        "correct": 5,
+        "total": 5
+      },
+      {
+        "topic_id": "topic_b",
+        "correct": 2,
+        "total": 5
+      },
+      {
+        "topic_id": "topic_c",
+        "correct": 1,
+        "total": 5
+      }
+    ],
+    "expected": "topic_c"
+  },
+  {
+    "id": "EVAL-29",
+    "topics": [
+      {
+        "topic_id": "topic_a",
+        "correct": 2,
+        "total": 5
+      },
+      {
+        "topic_id": "topic_b",
+        "correct": 1,
+        "total": 5
+      },
+      {
+        "topic_id": "topic_c",
+        "correct": 5,
+        "total": 5
+      }
+    ],
+    "expected": "topic_b"
+  },
+  {
+    "id": "EVAL-30",
+    "topics": [
+      {
+        "topic_id": "topic_a",
+        "correct": 3,
+        "total": 5
+      },
+      {
+        "topic_id": "topic_b",
+        "correct": 3,
+        "total": 5
+      },
+      {
+        "topic_id": "topic_c",
+        "correct": 3,
+        "total": 5
+      }
+    ],
+    "expected": "topic_a"
+  }
+]
