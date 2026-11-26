@@ -1,0 +1,25 @@
+{
+  "period_start_utc": "2026-11-25T14:03:26+00:00",
+  "period_end_utc": "2026-11-26T23:08:59+00:00",
+  "calendar_days": 2,
+  "total_workflow_runs": 57,
+  "ci_results": {
+    "success": 27,
+    "failure": 1
+  },
+  "deployment_results": {
+    "success": 18,
+    "cancelled": 11
+  },
+  "ci_success_rate_pct": 96.43,
+  "successful_deployments": 18,
+  "deployments_per_calendar_day": 9.0,
+  "mean_ci_duration_sec": 13.89,
+  "median_ci_duration_sec": 12.0,
+  "mean_deployment_duration_sec": 41.67,
+  "lead_time_sample_size": 18,
+  "mean_lead_time_sec": 50.61,
+  "median_lead_time_sec": 43.5,
+  "change_failure_rate": null,
+  "failed_deployment_recovery_time": null
+}
