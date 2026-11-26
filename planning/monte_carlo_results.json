@@ -1,0 +1,54 @@
+{
+  "simulations": 10000,
+  "seed": 42,
+  "start_date": "2026-11-27",
+  "deadline": "2026-12-15",
+  "available_days": 18,
+  "task_estimates_days": {
+    "Project management documentation": [
+      1,
+      2,
+      4
+    ],
+    "Remaining laboratory work": [
+      3,
+      5,
+      9
+    ],
+    "Documentation reconciliation": [
+      1,
+      2,
+      3
+    ],
+    "Final testing": [
+      1,
+      2,
+      4
+    ],
+    "Final presentation": [
+      1,
+      2,
+      3
+    ]
+  },
+  "mean_days": 14.34,
+  "deadline_probability_percent": 98.73,
+  "percentiles": {
+    "P50": {
+      "days": 14.3,
+      "finish_date": "2026-12-12"
+    },
+    "P70": {
+      "days": 15.2,
+      "finish_date": "2026-12-13"
+    },
+    "P85": {
+      "days": 16.1,
+      "finish_date": "2026-12-14"
+    },
+    "P95": {
+      "days": 17.14,
+      "finish_date": "2026-12-15"
+    }
+  }
+}
