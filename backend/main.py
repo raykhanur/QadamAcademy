@@ -1,6 +1,7 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
 from typing import List
+from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from pathlib import Path
 import requests
@@ -119,7 +120,15 @@ for folder in ("css", "js", "data"):
     )
 
 
+# Serve root-level static files (images, etc.)
+@app.get("/academy.png")
+def academy_png():
+    img = ROOT / "academy.png"
+    if not img.exists():
+        raise HTTPException(404, "academy.png not found")
+    return FileResponse(str(img), media_type="image/png")
+
+
 @app.get("/")
 def index():
-    from fastapi.responses import FileResponse
     return FileResponse(str(ROOT / "index.html"))
