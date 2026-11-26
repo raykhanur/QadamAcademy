@@ -268,7 +268,7 @@ function renderAISection() {
       <div class="rec-body">
         <strong>Жасанды интеллект көмекшісі</strong>
 
-        <p>AI тест нәтижелерін талдап, қайталау қажет тақырыпты ұсынады.</p>
+        <p>Негізгі ұсынысты алгоритм анықтайды. AI эксперименттік режимде жұмыс істейді.</p>
 
         <p>Ұсыныс қате болуы мүмкін. Жеке деректер AI моделіне жіберілмейді.</p>
 
@@ -327,6 +327,7 @@ async function loadAIRecommendation() {
   output.textContent = 'Нәтижелер өңделуде...';
 
   let selected = baseline.topic_id;
+  let aiPrediction = null;
   let source = 'baseline';
 
   try {
@@ -345,7 +346,8 @@ async function loadAIRecommendation() {
     const data = await response.json();
 
     if (topics.some(t => t.topic_id === data.topic_id)) {
-      selected = data.topic_id;
+      aiPrediction = data.source === 'ai' ? data.topic_id : null;
+      selected = baseline.topic_id;
       source = data.source === 'ai' ? 'ai' : 'baseline';
     }
 
@@ -363,9 +365,7 @@ async function loadAIRecommendation() {
   output.replaceChildren();
 
   const title = document.createElement('strong');
-  title.textContent = source === 'ai'
-    ? '🤖 AI ұсынысы'
-    : '📊 Алгоритмдік ұсыныс';
+  title.textContent = '📊 Алгоритмдік ұсыныс';
 
   const topic = document.createElement('p');
   topic.textContent = 'Тақырып: ' + result.testTitle;
@@ -392,10 +392,10 @@ async function loadAIRecommendation() {
 
   output.append(title, topic, score, advice);
 
-  if (source === 'ai' && selected !== baseline.topic_id) {
+  if (source === 'ai' && aiPrediction !== baseline.topic_id) {
     const warning = document.createElement('p');
     warning.textContent =
-      '⚠️ AI нәтижесі стандартты алгоритмнен ерекшеленеді. Ұсынысты тексеріңіз.';
+      '⚠️ AI қате нәтиже берді. Қауіпсіздік үшін алгоритмдік ұсыныс қолданылды.';
     output.append(warning);
   }
 
