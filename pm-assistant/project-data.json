@@ -1,0 +1,65 @@
+{
+  "project": "Qadam Academy",
+  "date": "2026-11-26",
+  "total_tasks": 17,
+  "done": 11,
+  "in_progress": 5,
+  "todo": 1,
+  "remaining_tasks": [
+    {
+      "id": 8,
+      "title": "Project management",
+      "status": "In Progress",
+      "priority": "High",
+      "story_points": 3,
+      "deadline": "2026-12-01"
+    },
+    {
+      "id": 5,
+      "title": "Project budget",
+      "status": "In Progress",
+      "priority": "Medium",
+      "story_points": 3,
+      "deadline": "2026-12-01"
+    },
+    {
+      "id": 4,
+      "title": "Risk assessment",
+      "status": "In Progress",
+      "priority": "Medium",
+      "story_points": 3,
+      "deadline": "2026-12-01"
+    },
+    {
+      "id": 3,
+      "title": "Functional testing",
+      "status": "In Progress",
+      "priority": "High",
+      "story_points": 5,
+      "deadline": "2026-12-01"
+    },
+    {
+      "id": 9,
+      "title": "Lab documentation",
+      "status": "In Progress",
+      "priority": "High",
+      "story_points": 8,
+      "deadline": "2026-12-15"
+    },
+    {
+      "id": 7,
+      "title": "Final presentation",
+      "status": "Todo",
+      "priority": "Medium",
+      "story_points": 3,
+      "deadline": "2026-12-15"
+    }
+  ],
+  "ai_evaluation": {
+    "model": "qwen2.5:3b",
+    "test_cases": 30,
+    "accuracy": 0.9,
+    "baseline_accuracy": 1.0,
+    "decision": "Baseline primary, AI experimental"
+  }
+}
